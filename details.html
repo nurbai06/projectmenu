@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="details.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Food Details</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top-bar">
+    <a href="index.html"><div class="icon-btn back">←</div></a>
+    <p class="title">Details</p>
+    <div class="icon-btn heart">❤</div>
+  </div>
+
+  
+  <div class="food-header">
+
+
+    <img id="detail-img" class="food-img">
+
+  
+    <div class="food-info">
+
+      <h2 id="detail-title" class="food-title"></h2>
+
+      <p class="rating" id="detail-rating"></p>
+
+      <p class="price-label">Price</p>
+      <p class="price" id="detail-price"></p>
+
+      <p class="section-title">Quantity</p>
+      <div class="quantity-box">
+        <button class="btn minus">-</button>
+        <span class="qty"></span>
+        <button class="btn plus">+</button>
+      </div>
+
+      <p class="section-title">Size</p>
+      <div class="size-row">
+        <button class="size-btn active">Small</button>
+        <button class="size-btn">Half</button>
+        <button class="size-btn">Full</button>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="desc" id="detail-desc">
+    Loading description...
+  </p>
+
+
+  <p class="section-title">Similar Dishes</p>
+
+  <div class="similar-list" id="similar-list">
+   
+  </div>
+
+</div>
+
+
+<div class="action-bar">
+  <a href="cart.html" class="action-btn cart-btn">
+    <img src="icons/cart.svg" class="btn-icon">
+    <span>Add to Cart</span>
+  </a>
+
+  <a href="checkout.html" class="action-btn order-btn">
+    <img src="icons/bag-shopping.svg" class="btn-icon">
+    <span>Order Now</span>
+  </a>
+</div>
+
+
+<div class="bottom-bar">
+  <a href="index.html" class="item"><img src="icons/free-icon-home-8638623.png"></a>
+  <a href="search.html" class="item"><img src="icons/free-icon-magnifier-tool-44514.png"></a>
+  <a href="cart.html" class="item"><img src="icons/shopping-cart_3916598.png"></a>
+  <a href="profile.html" class="item"><img src="icons/circle-user_18706282.png"></a>
+</div>
+
+<script src="navbar.js"></script>
+<script src="api.js"></script>
+<script>
+const minusBtn = document.querySelector(".minus");
+const plusBtn = document.querySelector(".plus");
+const qtySpan = document.querySelector(".qty");
+
+qtySpan.textContent = "01";
+
+minusBtn.addEventListener("click", () => {
+    let qty = parseInt(qtySpan.textContent);
+    if (qty > 1) {
+        qty--;
+        qtySpan.textContent = qty < 10 ? "0" + qty : qty;
+    }
+});
+
+plusBtn.addEventListener("click", () => {
+    let qty = parseInt(qtySpan.textContent);
+    qty++;
+    qtySpan.textContent = qty < 10 ? "0" + qty : qty;
+});
+</script>
+
+</body>
+</html>

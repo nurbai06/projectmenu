@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>My Cart</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top-bar">
+    <a href="details.html">
+      <div class="icon-btn">←</div>
+    </a>
+    <p class="title">My Cart</p>
+    <div class="empty"></div>
+  </div>
+
+  <div class="cart-item">
+    <img src="food1.jpg" class="food-pic">
+    <div class="info">
+      <p class="name">Hyderabadi Biryani</p>
+      <p class="sub">Small • Spicy</p>
+
+      <div class="row">
+        <p class="price">$7.50</p>
+
+        <div class="qty-box">
+          <button class="btn">−</button>
+          <span>01</span>
+          <button class="btn">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <img src="food2.jpg" class="food-pic">
+    <div class="info">
+      <p class="name">Veg Biryani</p>
+      <p class="sub">Full • Mild</p>
+
+      <div class="row">
+        <p class="price">$5.50</p>
+
+        <div class="qty-box">
+          <button class="btn">−</button>
+          <span>02</span>
+          <button class="btn">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="line">
+      <p>Subtotal</p>
+      <p>$18.50</p>
+    </div>
+
+    <div class="line">
+      <p>Delivery Fee</p>
+      <p>$2.00</p>
+    </div>
+
+    <div class="line total">
+      <p>Total</p>
+      <p>$20.50</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="action-bar">
+  <a href="checkout.html">
+    <button class="order-btn">Proceed to Checkout</button>
+  </a>
+</div>
+
+<div class="bottom-bar">
+  <a href="index.html" class="item"><img src="icons/free-icon-home-8638623.png"></a>
+  <a href="search.html" class="item"><img src="icons/free-icon-magnifier-tool-44514.png"></a>
+  <a href="cart.html" class="item"><img src="icons/shopping-cart_3916598.png"></a>
+  <a href="profile.html" class="item"><img src="icons/circle-user_18706282.png"></a>
+</div>
+
+<script src="navbar.js">
+  document.querySelectorAll(".cart-item").forEach(item => {
+    const minusBtn = item.querySelector(".btn:nth-child(1)");
+    const plusBtn = item.querySelector(".btn:nth-child(3)");
+    const qtySpan = item.querySelector(".qty-box span");
+
+    minusBtn.addEventListener("click", () => {
+        let qty = parseInt(qtySpan.textContent);
+        if (qty > 1) {
+            qty--;
+            qtySpan.textContent = qty < 10 ? "0" + qty : qty;
+        }
+    });
+
+    plusBtn.addEventListener("click", () => {
+        let qty = parseInt(qtySpan.textContent);
+        qty++;
+        qtySpan.textContent = qty < 10 ? "0" + qty : qty;
+    });
+});
+</script>
+
+
+</body>
+</html>

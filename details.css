@@ -1,0 +1,271 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  max-width:430px;
+  margin:0 auto;
+  background:#fff;
+}
+
+.container{
+  padding:16px;
+  padding-bottom:180px;
+}
+
+.top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:16px;
+}
+
+.title{
+  font-size:18px;
+  font-weight:600;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+.food-header{
+  position:relative;
+  min-height:270px;
+  padding-right:130px;
+}
+
+.food-img{
+  position:absolute;
+  right:-30px;
+  top:0;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  z-index:1;
+}
+
+.food-info{
+  position:relative;
+  z-index:2;
+  max-width:60%;
+}
+
+.food-title{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.rating{
+  color:#444;
+  margin:4px 0;
+}
+
+.reviews{
+  color:#777;
+  font-size:13px;
+}
+
+.restaurant{
+  margin-top:8px;
+  color:#777;
+}
+
+.restaurant span{
+  font-weight:500;
+  color:#000;
+}
+
+.price-label{
+  margin-top:14px;
+  font-size:14px;
+  color:#777;
+}
+
+.price{
+  font-size:20px;
+  font-weight:600;
+  color:#ff6d5a;
+  margin-bottom:10px;
+}
+
+.section-title{
+  margin:14px 0 6px 0;
+  font-weight:500;
+}
+
+.quantity-box{
+  width:130px;
+  height:44px;
+  border-radius:12px;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 12px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.qty-btn{
+  width:26px;
+  height:26px;
+  border-radius:8px;
+  border:none;
+  background:#ff6d5a;
+  color:white;
+  font-size:18px;
+}
+
+.qty{
+  font-size:18px;
+  font-weight:500;
+}
+
+.size-row{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+}
+
+.size-btn{
+  padding:8px 20px;
+  background:#eee;
+  border:none;
+  border-radius:20px;
+}
+
+.size-btn.active{
+  background:#ff7d67;
+  color:white;
+}
+
+.desc{
+  margin-top:12px;
+  color:#666;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.read-more{
+  color:#ff6d5a;
+  font-weight:500;
+  cursor:pointer;
+}
+
+.similar-list{
+  margin-top:12px;
+  display:flex;
+  gap:27px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.similar-card{
+  min-width:170px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  padding:10px;
+}
+
+.similar-card img{
+  width:100%;
+  height:110px;
+  border-radius:16px;
+  object-fit:cover;
+}
+
+.name{
+  font-weight:600;
+  font-size:15px;
+}
+
+.action-bar {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 430px;
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  padding: 12px;
+  background: 0;
+  z-index: 90;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 0;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cart-btn {
+  background: #ffffff;
+  color: #ff6d5a;
+  border: 1px solid #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.order-btn {
+  background: #ff6d5a;
+  color: white;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.bottom-bar{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:430px;
+  width:100%;
+  background:white;
+  padding:12px 0;
+  display:flex;
+  justify-content:space-around;
+  box-shadow:0 -3px 15px rgba(0,0,0,0.15);
+  z-index:100;
+}
+
+.bottom-bar .item img{
+  width:26px;
+  height:26px;
+  opacity:0.4;
+}
+
+.bottom-bar .item.active img{
+  opacity:1;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}

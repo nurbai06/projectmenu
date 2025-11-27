@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Food App Mobile</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-bar">
+    <img src="avatar.png" class="avatar">
+    <div class="address">
+      <p class="deliver">Deliver to ▼</p>
+      <p class="location">201 Pretty View Lane</p>
+    </div>
+    <div class="icon-btn">🔔</div>
+  </div>
+
+  <div class="search-row">
+    <input type="text" placeholder="Search for food…">
+    <div class="filter-btn">⚙️</div>
+  </div>
+
+  <div class="special-offer">
+    <div class="text">
+      <h1>30%</h1>
+      <p>Off on<br>Shrimp Noodles</p>
+    </div>
+    <img src="noodles.png" class="offer-img">
+  </div>
+
+  <div class="categories" id="category-list"></div>
+
+  
+  <div class="cards" id="product-list"></div>
+
+</div>
+
+<div class="bottom-bar">
+  <a href="index.html" class="item active"><img src="icons/free-icon-home-8638623.png"></a>
+  <a href="search.html" class="item"><img src="icons/free-icon-magnifier-tool-44514.png"></a>
+  <a href="cart.html" class="item"><img src="icons/shopping-cart_3916598.png"></a>
+  <a href="profile.html" class="item"><img src="icons/circle-user_18706282.png"></a>
+</div>
+
+<script src="navbar.js"></script>
+<script src="api.js"></script>
+
+</body>
+</html>
