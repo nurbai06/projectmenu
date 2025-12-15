@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="index.html"><div class="icon-btn back">←</div></a>
 <div class="shell-game">
   <h3>Угадай, где приз 🎁</h3>
 
@@ -63,7 +64,7 @@
 
       if (index === winningIndex) {
         cup.classList.add("correct");
-        result.textContent = "Ты угадал 🎉 Бонус твой";
+        result.textContent = "Ты угадал 🎉 5$ бонус твой!";
         localStorage.setItem("bonus", "5%");
       } else {
         cups[winningIndex].classList.add("correct");
