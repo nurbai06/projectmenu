@@ -99,26 +99,75 @@ body{
   border-radius:50%;
 }
 
-.categories{
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 12px 0;
-    margin: 10px 0;
+.categories {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 0;
+  margin: 10px 0;
 }
 
-.cat{
-  padding:8px 20px;
-  background:#eee;
-  border-radius:20px;
-  border:none;
+.cat {
+  position: relative;
+  padding: 8px 20px;
+  background: #eee;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
 }
 
-.cat.active{
-  background:#ff7d67;
-  color:white;
+.cat:active {
+  transform: scale(0.94);
 }
+
+.cat::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: rgba(255,255,255,0.35);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.cat.active {
+  background: #ff7d67;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255,125,103,0.45);
+}
+
+.cat.active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+@keyframes catPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+.cat.active {
+  animation: catPop 0.25s ease;
+}
+
 
 .cards{
   display: grid;
@@ -137,7 +186,13 @@ body{
   box-shadow:0 3px 10px rgba(0,0,0,0.1);
   padding-bottom:12px;
   position:relative;
+
+  height: 230px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 .card img{
   width:100%;
@@ -197,3 +252,59 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+
+
+
+.offer-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px;
+  margin-bottom: 20px;
+}
+
+.offer-track {
+  display: flex;
+  gap: 14px;
+  animation: slideMove 18s ease-in-out infinite;
+}
+
+
+.offer-card {
+  flex: 0 0 97%;
+  max-width: 97%;
+  background: #ff7d67;
+  padding: 18px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.offer-card h1 {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.offer-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes slideMove {
+  0%   { transform: translateX(0); }           
+  20%  { transform: translateX(0); }           
+
+  35%  { transform: translateX(-100%); }       
+  55%  { transform: translateX(-100%); }      
+
+  70%  { transform: translateX(-200%); }       
+  90%  { transform: translateX(-200%); }       
+
+  100% { transform: translateX(0); }           
+}
+
+

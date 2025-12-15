@@ -1,0 +1,76 @@
+.shell-game {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 20px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.shell-game h3 {
+  font-size: 16px;
+}
+
+.cups {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.cup {
+  width: 30%;
+  max-width: 90px;
+  aspect-ratio: 3 / 4;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.cup img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cup:active {
+  transform: translateY(-6px) scale(0.95);
+}
+
+.cup.correct::after {
+  content: "🎁";
+  position: absolute;
+  font-size: 26px;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.result {
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.game-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: none;
+  background: #ff7d67;
+  color: white;
+  font-size: 14px;
+}
+
+@keyframes cupSwing {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-12deg); }
+  40%  { transform: rotate(12deg); }
+  60%  { transform: rotate(-10deg); }
+  80%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.cup.swing {
+  animation: cupSwing 0.9s ease-in-out infinite;
+  transform-origin: bottom center;
+}

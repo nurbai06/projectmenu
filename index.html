@@ -12,10 +12,10 @@
 <div class="container">
 
   <div class="top-bar">
-    <img src="avatar.png" class="avatar">
+    <img src="icons/image.png" class="avatar">
     <div class="address">
-      <p class="deliver">Deliver to ▼</p>
-      <p class="location">201 Pretty View Lane</p>
+      <p class="deliver">Доставить в ▼</p>
+      <p class="location">Бишкек, Анкара 28</p>
     </div>
     <div class="icon-btn">🔔</div>
   </div>
@@ -25,13 +25,37 @@
     <div class="filter-btn">⚙️</div>
   </div>
 
-  <div class="special-offer">
-    <div class="text">
-      <h1>30%</h1>
-      <p>Off on<br>Shrimp Noodles</p>
+ <div class="offer-wrapper">
+  <div class="offer-track">
+    
+    <div class="offer-card">
+      <div class="text">
+        <h1>30%</h1>
+        <p>Скидка на<br>Куурдак</p>
+      </div>
+      <img src="icons/hanskiy_kuurdak.800x600w.jpg" class="offer-img">
     </div>
-    <img src="noodles.png" class="offer-img">
+
+    <div class="offer-card">
+      <div class="text">
+        <h1>25%</h1>
+        <p>Суп Лагман<br>Большой</p>
+      </div>
+      <img src="icons/lagman.jpg" class="offer-img">
+    </div>
+
+    <div class="offer-card">
+      <div class="text">
+        <h1>40%</h1>
+        <p>Самса<br>Домашняя</p>
+      </div>
+      <img src="icons/samsa.jpg" class="offer-img">
+    </div>
+
   </div>
+</div>
+
+
 
   <div class="categories" id="category-list"></div>
 
@@ -42,13 +66,23 @@
 
 <div class="bottom-bar">
   <a href="index.html" class="item active"><img src="icons/free-icon-home-8638623.png"></a>
-  <a href="search.html" class="item"><img src="icons/free-icon-magnifier-tool-44514.png"></a>
-  <a href="cart.html" class="item"><img src="icons/shopping-cart_3916598.png"></a>
+  <a href="searchы.html" class="item"><img src="icons/free-icon-magnifier-tool-44514.png"></a>
+  <a href="cartы.html" class="item"><img src="icons/shopping-cart_3916598.png"></a>
   <a href="profile.html" class="item"><img src="icons/circle-user_18706282.png"></a>
 </div>
 
 <script src="navbar.js"></script>
 <script src="api.js"></script>
+<script>
+  const cats = document.querySelectorAll('.cat');
+
+  cats.forEach(cat => {
+    cat.addEventListener('click', () => {
+      cats.forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>

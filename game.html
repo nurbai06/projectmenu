@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="shell-game">
+  <h3>Угадай, где приз 🎁</h3>
+
+  <div class="cups">
+    <div class="cup" data-index="0">
+      <img src="cup.png" alt="cup">
+    </div>
+    <div class="cup" data-index="1">
+      <img src="cup.png" alt="cup">
+    </div>
+    <div class="cup" data-index="2">
+      <img src="cup.png" alt="cup">
+    </div>
+  </div>
+
+  <p class="result" id="game-result"></p>
+  <button class="game-btn" id="start-game">Начать игру</button>
+</div>
+
+<script>
+  const cups = document.querySelectorAll(".cup");
+  const result = document.getElementById("game-result");
+  const startBtn = document.getElementById("start-game");
+
+  let winningIndex = null;
+  let gameActive = false;
+  let swingTimeout = null;
+
+  function startGame() {
+    result.textContent = "";
+    gameActive = false;
+
+    cups.forEach(cup => {
+      cup.classList.remove("correct");
+      cup.classList.add("swing");
+    });
+
+    winningIndex = Math.floor(Math.random() * cups.length);
+
+  
+    clearTimeout(swingTimeout);
+    swingTimeout = setTimeout(() => {
+      cups.forEach(cup => cup.classList.remove("swing"));
+      gameActive = true;
+    }, 1500);
+  }
+
+  cups.forEach(cup => {
+    cup.addEventListener("click", () => {
+      if (!gameActive) return;
+
+      gameActive = false;
+      const index = Number(cup.dataset.index);
+
+      if (index === winningIndex) {
+        cup.classList.add("correct");
+        result.textContent = "Ты угадал 🎉 Бонус твой";
+        localStorage.setItem("bonus", "5%");
+      } else {
+        cups[winningIndex].classList.add("correct");
+        result.textContent = "Не угадал. Почти получилось.";
+      }
+    });
+  });
+
+  startBtn.addEventListener("click", startGame);
+</script>
+
+
+
+</body>
+</html>
